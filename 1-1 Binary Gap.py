@@ -21,19 +21,16 @@ def solution(N):
         if binary_N[i]== '1' :
             arr.append(i)
             for x in range(0, len(arr)):
-                arr_diff.append( arr[x] - arr[x-1]-1 )
+                arr_diff.append( arr[x] - arr[x-1] )
     
     max_N = max(arr) +1
     min_N = min(arr) +1
     print(max_N)
     print(min_N)
-    if len(arr)<3:
-        if max_N=="" or min_N=="" or max_N-min_N==0 :
-            solution = 0
-        else:
-            solution = max_N - min_N -1
+    if max(arr_diff) >=1 :
+        solution = max(arr_diff)-1
     else:
-        solution = max(arr_diff)
+        solution = 0
         
     return solution
     
