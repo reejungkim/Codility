@@ -15,9 +15,13 @@ def solution(N):
     print("length: " + str(len(binary_N)))
     
     arr = []
-    for i in range(0, len(binary_N)) : #bin(N) :
+    arr_diff =[]
+    for i in range(2, len(binary_N)) :  
+    # range starts from 2 as binary numbers always starts with "0b"
         if binary_N[i]== '1' :
             arr.append(i)
+            for x in range(0, len(arr)):
+                arr_diff.append( arr[x] - arr[x-1]-1 )
     
     max_N = max(arr) +1
     min_N = min(arr) +1
@@ -29,7 +33,7 @@ def solution(N):
         else:
             solution = max_N - min_N -1
     else:
-        solution = 111
+        solution = max(arr_diff)
         
     return solution
     
