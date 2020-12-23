@@ -9,11 +9,7 @@ Created on Wed Dec 23 00:32:15 2020
 def solution(A):
     # write your code in Python 3.6
 
-    arr = []
+    unique =    list(set(A)) 
+    return( len(unique))
 
-    for i in A:
-        if i not in arr:
-            arr.append(i)
-        count = len(arr)
-    return count
     pass
