@@ -32,11 +32,14 @@ def solution(A):
             answer = i
             #arr.append(i)
 
-
-    if max_count > half:
-        solution = answer #arr
-    else:
+    if len(A)==0:
         solution = -1
+    elif max_count <= half:
+        solution = -1
+    else: 
+        solution = answer #arr
+
+    
 
 
     return solution
