@@ -9,39 +9,28 @@ Created on Fri Dec 25 00:01:52 2020
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
+
+
 def solution(A):
     # write your code in Python 3.6
-    half = len(A)/2
-    dict = {}
-    #arr = []
-
-    for i in set(A):
-        count = A.count(i)
-        dict[i] = count
-        max_count = max( dict.values())
-    
-    #print(dict)
-    #print( max_count )
-    for key in dict.keys():
-        if dict[key] == max_count:
-            dominator = key
-
-
-    for i in range( len(A) ):
-        if A[i] ==  dominator:
-            answer = i
-            #arr.append(i)
-
-    if len(A)==0:
-        solution = -1
-    elif max_count <= half:
-        solution = -1
-    else: 
-        solution = answer #arr
-
-    
-
-
-    return solution
+    n = len(A)
+    if n == 0:
+        leader_index = -1
+    elif n == 1:
+        leader_index = 0
+    else:
+        A_sorted = sorted(A)
+        candidate = A_sorted[n//2]
+        count = 0
+        for i in range(n):
+            if A_sorted[i]==candidate  :
+                count +=1
+        if count > n//2 :
+            leader_index = A.index(candidate)
+        else:
+            leader_index = -1
+ 
+    return leader_index
 
     pass
+
