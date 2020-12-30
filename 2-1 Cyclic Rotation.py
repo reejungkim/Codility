@@ -6,34 +6,10 @@ Created on Tue Dec 22 12:25:39 2020
 @author: reejungkim
 """
 def solution(A, K):
-   
-    if len(A)>0:
-        temp_list = A
-        for i in range(0, K):
-            temp_list =    rotate_list(temp_list, K)
-        solution = temp_list
-    else:
-        solution =  A
+    # write your code in Python 3.6
+    for i in range(K):
+        A = A[-1:] + A[:-1]
         
-    return solution 
-        
-pass
-
-
-
-
-def rotate_list(A, K):
+    return A
     
-    length_A = len(A)
-    arr = [] 
-    
-    
-    last = A[length_A-1]
-    arr.append(last)
-
-    for i in range(0, length_A-1):
-        temp = A[i]
-        arr.append(temp)
-    
-    return arr
-pass
+    pass
