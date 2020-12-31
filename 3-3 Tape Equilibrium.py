@@ -5,7 +5,7 @@ Created on Wed Dec 23 00:01:26 2020
 
 @author: reejungkim
 """
-
+#https://app.codility.com/demo/results/trainingA7MDHV-D86/
 def solution(A):
     # write your code in Python 3.6
     total = sum(A)
