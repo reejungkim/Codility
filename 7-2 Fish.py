@@ -11,30 +11,23 @@ Created on Fri Dec 25 22:26:40 2020
 #https://app.codility.com/demo/results/trainingATWSAF-24M/
 # Complexity : O(N)
 
-
 def solution(A, B):
-    # write your code in Python 3.6
+# write your code in Python 3.6
+    downward = []
+    survival = 0
 
-  
-    i = 0
-    while i < len(B)-1: 
-
-        if B[i] == 1 and B[i+1] ==0:
-            if A[i] > A[i+1]:
-                del A[i+1]
-                del B[i+1]
-                #print("A: "  +str(A) )
-                #print("B: " + str(B) )
-            else:
-                del A[i]
-                del B[i]
-                #print("A: " + str(A) )
-                #print("B: " + str(B) )
-            i -= 1
+    for size, direction in zip(A, B):
+        if direction == 1:
+            downward.append(size)
         else:
-            i += 1
+            while downward and downward[-1] < size:
+                downward.pop()
+            if downward and downward[-1]>size:
+                survival +=0
+            else:
+                survival +=1
 
-    return(len(B))  
-        
+    return survival + len(downward)
 
-    pass
+#survival: number of fishes successfully upwarded
+#downward: numbers of fishses dwonwarded

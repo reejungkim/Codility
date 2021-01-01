@@ -5,6 +5,8 @@ Created on Thu Dec 24 00:11:50 2020
 
 @author: reejungkim
 """
+#https://app.codility.com/demo/results/training7QQD27-JJB/
+
 def solution(A):
     # write your code in Python 3.6
     passing = 0
