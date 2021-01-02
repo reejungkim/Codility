@@ -11,36 +11,11 @@ Created on Fri Dec 25 22:54:47 2020
 
 
 
-#Complexity : O(N**2)
-
 def solution(A):
     # write your code in Python 3.6
-    if len(A) == 0:
-        return 0
-    else: 
-        return findMaxProfit(A)
-
+    max_slice = max_ending = 0
+    for i in range(1, len(A)):
+        max_ending = max(0, max_ending + A[i] - A[i-1])
+        max_slice = max(max_slice, max_ending)
+    return max_slice
     pass
-
-
-def findMaxProfit(A):
-    arr = []
-
-    for i in range(len(A)-1):
-        #print(i)
-        p_buy = A[i]
-        if p_buy <0:
-            p_buy = p_buy*-1
-        
-        p_sell = max(A[i+1:])
-        profit = p_sell - p_buy
-        arr.append(profit)
-        #print(arr)
-    
-    max_profit = max(arr)
-    if max_profit <= 0 :
-        return 0
-    else:
-        return max_profit
-
-pass
