@@ -1,0 +1,19 @@
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+
+def solution(S):
+    # write your code in Python 3.6
+    arr=[]
+    k=0
+
+    for i in range(0, len(S)-2):
+
+        alpha = S[i]
+        arr.append(alpha)
+        if S[i]==S[i+1] :
+            arr.pop(k)
+            arr.pop(k+1)
+            k-=2
+    return arr
+
+    pass
