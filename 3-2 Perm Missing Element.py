@@ -21,6 +21,8 @@ The result in each column is n + 1, so we can easily count the final result:
 2 result = n * (n + 1) // 2
 3 return result
 
+
+
 '''
 
 def solution(A):
