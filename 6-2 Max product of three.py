@@ -4,6 +4,8 @@
 Created on Wed Dec 23 01:16:06 2020
 
 @author: reejungkim
+
+
 """
 
 def solution(A):

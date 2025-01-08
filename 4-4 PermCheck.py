@@ -8,7 +8,7 @@ Created on Wed Dec 23 22:52:46 2020
 
 def solution(A):
     # write your code in Python 3.6
-    A = sorted(A)
+    A = sorted(A)  #A.sort()
 
     for i in range(0, len(A)):
         if A[i] != i+1 :
